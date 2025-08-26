@@ -8,7 +8,7 @@ export default function Home() {
                 {/* Logo */}
                 <div className="mb-6 flex justify-center">
                     <Image
-                        src="/assets/logo.png"
+                        src={`/assets/logo.png`}
                         alt="Mitchi Motcho Logo"
                         width={96}
                         height={96}

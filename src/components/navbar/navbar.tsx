@@ -25,7 +25,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                     <Link href="/" aria-label="Mitchi Motcho Websites">
                         <Image
-                            src="/assets/logo.png"
+                            src={`/assets/logo.png`}
                             alt="Mitchi Motcho Logo"
                             width={36}
                             height={36}
@@ -52,7 +52,10 @@ export default function Navbar() {
                                     aria-disabled="true"
                                     title="Coming soon"
                                 >
-                                    {item.title} <span aria-hidden="true">(Coming soon)</span>
+                                    {item.title}{" "}
+                                    <span aria-hidden="true">
+                                        (Coming soon)
+                                    </span>
                                 </span>
                             ) : (
                                 <Link
@@ -94,7 +97,10 @@ export default function Navbar() {
                                         aria-disabled="true"
                                         title="Coming soon"
                                     >
-                                        {item.title} <span aria-hidden="true">(Coming soon)</span>
+                                        {item.title}{" "}
+                                        <span aria-hidden="true">
+                                            (Coming soon)
+                                        </span>
                                     </span>
                                 ) : (
                                     <Link

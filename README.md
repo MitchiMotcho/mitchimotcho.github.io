@@ -1,7 +1,3 @@
-Here’s a solid **`README.md`** for your Mitchi Motcho Websites project. It keeps the professional but friendly tone we’ve been using, explains what the project is, how to run it, and how to customize.
-
----
-
 # Mitchi Motcho Websites
 
 🚀 **Mitchi Motcho Websites** is a local Vietnamese-run web development service, focused on building **modern, stress-free websites for small businesses**.

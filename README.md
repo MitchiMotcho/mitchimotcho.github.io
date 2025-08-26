@@ -1,6 +1,6 @@
 # Mitchi Motcho Websites
 
-🚀 **Mitchi Motcho Websites** is a local Vietnamese-run web development service, focused on building **modern, stress-free websites for small businesses**.
+🚀 **Mitchi Motcho Websites** is a local, community-driven web development service, focused on building **modern, stress-free websites for small businesses**.
 This repository powers our own site (`motchi.ca`) — designed with a **warm, trustworthy aesthetic** that reflects our mission: *we handle the tech so you can focus on your business.*
 
 ---

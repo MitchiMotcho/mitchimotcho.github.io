@@ -104,5 +104,5 @@ styles/
 
 ## 📄 License
 
-This project is licensed under the MIT License. Feel free to reuse with attribution.
+This project is licensed under the GNU V3 License.
 

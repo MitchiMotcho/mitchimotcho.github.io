@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Detect package manager
-        id: detect-package-manager
+        id: pm
         run: |
           if [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
             echo "manager=pnpm" >> $GITHUB_OUTPUT
@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: ${{ steps.pm.outputs.manager }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -62,18 +62,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "pnpm" ]; then
+          if [ "${{ steps.pm.outputs.manager }}" = "pnpm" ]; then
             corepack enable
             corepack prepare pnpm@latest --activate
           fi
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.install }}
+          ${{ steps.pm.outputs.manager }} ${{ steps.pm.outputs.install }}
 
-      - name: Build (Next.js) & Export (static)
+      - name: Build static export via output export
         env:
           NODE_OPTIONS: --max_old_space_size=4096
-        run: |
-          ${{ steps.detect-package-manager.outputs.runner }} next build
-          ${{ steps.detect-package-manager.outputs.runner }} next export
+          NEXT_TELEMETRY_DISABLED: 1
+        run: ${{ steps.pm.outputs.runner }} next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
